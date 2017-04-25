@@ -26,6 +26,8 @@ def list(request):
         dict(format="png", angle=20, height=None, width=None, transformation=[
             dict(crop="fill", gravity="north", width=150, height=150, effect="sepia"),
         ]),
+        dict(overlay="cloudinary_icon_apbeon"),
+        dict(effect="saturation:50"),
     ]
     samples = [filter_nones(dict(defaults, **sample)) for sample in samples]
     return render(request, 'list.html', dict(photos=Photo.objects.all(), samples=samples))
@@ -60,8 +62,6 @@ def upload(request):
         if form.is_valid():
             # Uploads image and creates a model instance for it
             form.save()
-        else:
-            context['errors'] = form.errors
 
     return render(request, 'upload.html', context)
 
