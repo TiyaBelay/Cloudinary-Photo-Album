@@ -2,3 +2,6 @@ photos.db
 build
 venv
 *.pyc
+local_settings.py
+.idea/
+env/

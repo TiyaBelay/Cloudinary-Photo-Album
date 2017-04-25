@@ -7,11 +7,19 @@
   <!-- A standard form for sending the image data to your server -->
   <div id='backend_upload'>
     <h1>Upload through your server</h1>
+
+    {% if errors %}
+      <div class="results" style="color:red;">
+        Error: {{ errors.image }}
+      </div>
+    {% endif %}
+
     <form action="{% url 'photo_album.views.upload' %}" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{ backend_form }}
       <input type="submit" value="Upload">
     </form>
+
     {% if posted %}
       <div class="results">
         {% if posted.errors %}

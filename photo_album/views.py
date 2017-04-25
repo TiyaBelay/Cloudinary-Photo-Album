@@ -60,6 +60,8 @@ def upload(request):
         if form.is_valid():
             # Uploads image and creates a model instance for it
             form.save()
+        else:
+            context['errors'] = form.errors
 
     return render(request, 'upload.html', context)
 
