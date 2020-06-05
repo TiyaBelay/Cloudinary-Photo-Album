@@ -1,6 +1,6 @@
 appdirs==1.4.3
 -e git+git@github.com:cloudinary/pycloudinary.git@12b5bbae7e262ac4425d70f12b30c4a1f9ca1fea#egg=cloudinary
-Django==1.8.13
+Django==1.11.29
 olefile==0.44
 packaging==16.8
 Pillow==4.1.0
